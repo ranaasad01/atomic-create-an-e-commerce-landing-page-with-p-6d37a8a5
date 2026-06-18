@@ -340,7 +340,7 @@ export default function HomePage() {
           >
             <motion.div variants={mv(fadeInUp)} className="inline-flex items-center gap-2 bg-indigo-600/20 border border-indigo-500/30 text-indigo-300 text-xs font-semibold px-4 py-2 rounded-full mb-6">
               <Sparkles className="w-3.5 h-3.5" />
-              New Season Collection — Now Live
+              New Season Collection 
             </motion.div>
 
             <motion.h1
