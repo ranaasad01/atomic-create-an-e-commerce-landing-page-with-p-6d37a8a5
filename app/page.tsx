@@ -20,7 +20,7 @@ import {
   slideInRight,
 } from "@/lib/motion";
 
-// ─── Inline mock data ────────────────────────────────────────────────────────
+// ─── Inline mock data ──────────────────────────────────────────────
 
 const products: Product[] = [
   {
@@ -176,7 +176,7 @@ const stats = [
   { value: "98%", label: "Satisfaction Rate" },
 ];
 
-// ─── Sub-components ───────────────────────────────────────────────────────────
+// ─── Sub-components ─────────────────────────────────────────────────
 
 function StarRating({ rating, count }: { rating: number; count: number }) {
   return (
@@ -306,7 +306,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
   );
 }
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
+// ─── Page ─────────────────────────────────────────────────────────────────────────────
 
 export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -321,7 +321,7 @@ export default function HomePage() {
 
   return (
     <main className="overflow-x-hidden">
-      {/* ── Hero ─────────────────────────────────────────────────────────── */}
+      {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section className="relative min-h-[92vh] flex items-center bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 overflow-hidden">
         {/* Background orbs */}
         <div className="absolute inset-0 pointer-events-none">
@@ -340,7 +340,7 @@ export default function HomePage() {
           >
             <motion.div variants={mv(fadeInUp)} className="inline-flex items-center gap-2 bg-indigo-600/20 border border-indigo-500/30 text-indigo-300 text-xs font-semibold px-4 py-2 rounded-full mb-6">
               <Sparkles className="w-3.5 h-3.5" />
-              New Season Collection 
+              New Season Collection
             </motion.div>
 
             <motion.h1
@@ -439,7 +439,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Value Props ──────────────────────────────────────────────────── */}
+      {/* ── Value Props ────────────────────────────────────────────────────── */}
       <section className="bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
           <motion.div
@@ -471,7 +471,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Categories ───────────────────────────────────────────────────── */}
+      {/* ── Categories ──────────────────────────────────────────────────────── */}
       <section id="categories" className="bg-slate-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -522,7 +522,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Products ─────────────────────────────────────────────────────── */}
+      {/* ── Products ──────────────────────────────────────────────────────────── */}
       <section id="products" className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -583,7 +583,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Deals Banner ─────────────────────────────────────────────────── */}
+      {/* ── Deals Banner ────────────────────────────────────────────────────── */}
       <section id="deals" className="bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-700 py-20 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/3 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
@@ -607,7 +607,7 @@ export default function HomePage() {
                 <span className="block text-yellow-300">This Weekend Only</span>
               </h2>
               <p className="text-indigo-100 text-lg mb-8 leading-relaxed">
-                Our biggest sale of the season. Hundreds of premium products reduced — from luxury skincare to designer fashion. Don't miss out.
+                Our biggest sale of the season. Hundreds of premium products reduced — from luxury skincare to designer fashion. Don&apos;t miss out.
               </p>
               <motion.button
                 whileHover={{ scale: 1.04 }}
@@ -658,24 +658,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Testimonials ─────────────────────────────────────────────────── */}
-      <section className="bg-slate-50 py-20">
+      {/* ── Testimonials ───────────────────────────────────────────────────── */}
+      <section id="about" className="bg-slate-50 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={mv(staggerContainer)}
-            className="text-center mb-14"
+            className="text-center mb-16"
           >
             <motion.p variants={mv(fadeInUp)} className="text-xs font-bold uppercase tracking-widest text-indigo-600 mb-3">
-              Social Proof
+              Customer Stories
             </motion.p>
             <motion.h2 variants={mv(fadeInUp)} className="text-4xl font-extrabold text-slate-900 tracking-tight">
               Loved by Thousands
             </motion.h2>
             <motion.p variants={mv(fadeInUp)} className="mt-4 text-slate-500 max-w-xl mx-auto">
-              Real reviews from real customers who've made {APP_NAME} their go-to destination for premium living.
+              Don&apos;t just take our word for it. Here&apos;s what our community has to say.
             </motion.p>
           </motion.div>
 
@@ -684,35 +684,33 @@ export default function HomePage() {
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={mv(staggerContainer)}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
             {testimonials.map((t) => (
               <motion.div
                 key={t.id}
                 variants={mv(fadeInUp)}
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-shadow"
+                className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 flex flex-col"
               >
                 <div className="flex items-center gap-0.5 mb-4">
-                  {[1, 2, 3, 4, 5].map((s) => (
-                    <Star key={s} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-4 h-4 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6">"{t.text}"</p>
+                <p className="text-slate-600 text-sm leading-relaxed flex-1 mb-6">&ldquo;{t.text}&rdquo;</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full overflow-hidden bg-indigo-100 flex-shrink-0">
-                    <img
-                      src={t.avatar}
-                      alt={t.name}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).style.display = "none";
-                      }}
-                    />
-                  </div>
+                  <img
+                    src={t.avatar}
+                    alt={t.name}
+                    className="w-10 h-10 rounded-full object-cover bg-slate-200"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src =
+                        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80";
+                    }}
+                  />
                   <div>
                     <p className="text-sm font-semibold text-slate-900">{t.name}</p>
-                    <p className="text-xs text-slate-400">{t.role}</p>
+                    <p className="text-xs text-slate-500">{t.role}</p>
                   </div>
                 </div>
               </motion.div>
@@ -721,149 +719,72 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── About / Brand Story ──────────────────────────────────────────── */}
-      <section id="about" className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
-              variants={mv(slideInLeft)}
-            >
-              <p className="text-xs font-bold uppercase tracking-widest text-indigo-600 mb-4">Our Story</p>
-              <h2 className="text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
-                Curation is an
-                <span className="text-indigo-600"> Art Form</span>
-              </h2>
-              <p className="text-slate-500 leading-relaxed mb-4">
-                {APP_NAME} was born from a simple frustration: too many products, too little quality. We set out to build a store where every single item earns its place — tested, verified, and chosen because it genuinely improves your life.
-              </p>
-              <p className="text-slate-500 leading-relaxed mb-8">
-                Our team of buyers travels the world sourcing from independent artisans, emerging designers, and established brands who share our obsession with craft. The result is a collection that feels personal, not algorithmic.
-              </p>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { icon: Award, text: "Certified sustainable sourcing" },
-                  { icon: ShieldCheck, text: "Every product quality-tested" },
-                  { icon: TrendingUp, text: "Growing community of 50K+" },
-                  { icon: Sparkles, text: "New arrivals every week" },
-                ].map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <div key={item.text} className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-4 h-4 text-indigo-600" />
-                      </div>
-                      <span className="text-xs text-slate-600 font-medium">{item.text}</span>
-                    </div>
-                  );
-                })}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
-              variants={mv(slideInRight)}
-              className="relative"
-            >
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4">
-                  <div className="rounded-2xl overflow-hidden aspect-[3/4] bg-slate-100">
-                    <img
-                      src="https://multilocal-media.b-cdn.net/curation%20video%20cover.jpg"
-                      alt="Our curation team"
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src =
-                          "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80";
-                      }}
-                    />
-                  </div>
-                  <div className="rounded-2xl overflow-hidden aspect-square bg-indigo-600 flex items-center justify-center p-6">
-                    <div className="text-center text-white">
-                      <p className="text-4xl font-extrabold">7+</p>
-                      <p className="text-xs font-semibold text-indigo-200 mt-1">Years of Curation</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-4 mt-8">
-                  <div className="rounded-2xl overflow-hidden aspect-square bg-slate-100">
-                    <img
-                      src="https://www.westrock.com/-/media/images/blog/premium-spirits-box.jpg?h=800&iar=0&mh=800&mw=1200&w=1200&sc_lang=en&hash=7CBE39AFE4B54719CBE4E3A722F055F0"
-                      alt="Premium packaging"
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src =
-                          "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400&q=80";
-                      }}
-                    />
-                  </div>
-                  <div className="rounded-2xl overflow-hidden aspect-[3/4] bg-slate-100">
-                    <img
-                      src="http://www.locallyhandmadene.com/cdn/shop/articles/handmade.png?v=1748519197"
-                      alt="Artisan craftsmanship"
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src =
-                          "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&q=80";
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Final CTA ────────────────────────────────────────────────────── */}
-      <section className="bg-slate-950 py-24 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-indigo-900/30 rounded-full blur-3xl" />
-        </div>
-        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* ── Newsletter ─────────────────────────────────────────────────────── */}
+      <section className="bg-slate-900 py-20">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={mv(staggerContainer)}
           >
-            <motion.div variants={mv(scaleIn)} className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-indigo-600 mb-8 mx-auto">
-              <Sparkles className="w-8 h-8 text-white" />
+            <motion.div variants={mv(fadeInUp)} className="inline-flex items-center gap-2 bg-indigo-600/20 border border-indigo-500/30 text-indigo-300 text-xs font-semibold px-4 py-2 rounded-full mb-6">
+              <Award className="w-3.5 h-3.5" />
+              Join the Community
             </motion.div>
-            <motion.h2 variants={mv(fadeInUp)} className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
-              Ready to Elevate
-              <span className="block text-indigo-400">Your Everyday?</span>
+            <motion.h2 variants={mv(fadeInUp)} className="text-4xl font-extrabold text-white tracking-tight mb-4">
+              Get Early Access &amp; Exclusive Offers
             </motion.h2>
-            <motion.p variants={mv(fadeInUp)} className="text-slate-400 text-lg leading-relaxed mb-10">
-              Join over 50,000 discerning shoppers who've made {APP_NAME} their trusted source for premium, curated products. Free shipping on your first order.
+            <motion.p variants={mv(fadeInUp)} className="text-slate-400 mb-8">
+              Subscribe to our newsletter and be the first to know about new arrivals, flash sales, and style inspiration.
             </motion.p>
-            <motion.div variants={mv(fadeInUp)} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.96 }}
-                onClick={() => document.querySelector("#products")?.scrollIntoView({ behavior: "smooth" })}
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-2xl transition-colors shadow-xl shadow-indigo-900/50 text-lg"
+            <motion.form
+              variants={mv(fadeInUp)}
+              onSubmit={(e) => e.preventDefault()}
+              className="flex flex-col sm:flex-row gap-3"
+            >
+              <input
+                type="email"
+                placeholder="Your email address"
+                className="flex-1 px-5 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-indigo-400 transition-colors text-sm"
+              />
+              <button
+                type="submit"
+                className="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap"
               >
-                {APP_CTA}
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.96 }}
-                onClick={() => document.querySelector("#categories")?.scrollIntoView({ behavior: "smooth" })}
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-white/10 hover:bg-white/15 text-white font-bold rounded-2xl border border-white/20 transition-colors text-lg"
-              >
-                Browse Categories
-                <ChevronRight className="w-5 h-5" />
-              </motion.button>
-            </motion.div>
+                Subscribe
+              </button>
+            </motion.form>
+            <motion.p variants={mv(fadeInUp)} className="text-xs text-slate-500 mt-4">
+              No spam, ever. Unsubscribe at any time.
+            </motion.p>
           </motion.div>
         </div>
       </section>
+
+      {/* ── Footer ───────────────────────────────────────────────────────────── */}
+      <footer className="bg-slate-950 border-t border-slate-800 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-center md:text-left">
+              <p className="text-xl font-extrabold text-white tracking-tight">{APP_NAME}</p>
+              <p className="text-xs text-slate-500 mt-1">Refined living, delivered.</p>
+            </div>
+            <div className="flex flex-wrap gap-6 text-xs text-slate-500">
+              {["Privacy Policy", "Terms of Service", "Cookie Policy", "Accessibility"].map((link) => (
+                <a key={link} href="#" className="hover:text-slate-300 transition-colors">
+                  {link}
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-slate-800 text-center">
+            <p className="text-xs text-slate-600">
+              &copy; {new Date().getFullYear()} {APP_NAME}. All rights reserved. Crafted with care.
+            </p>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

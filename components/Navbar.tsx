@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -127,6 +127,7 @@ export default function Navbar({ cartCount = 0 }: NavbarProps) {
                 href="#products"
                 onClick={(e) => handleNavClick(e, "#products")}
                 className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-xl transition-colors shadow-sm shadow-indigo-200"
+                style={{ color: "#000000", backgroundColor: "#4f46e5" }}
               >
                 Shop Now
               </Link>

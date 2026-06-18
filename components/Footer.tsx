@@ -1,12 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Sparkles, Mail, ArrowRight, Code2 as Github, MessageCircle as Twitter, Camera as Instagram } from 'lucide-react';
 import { APP_NAME, APP_TAGLINE, footerLinks } from "@/lib/data";
 import { fadeInUp, staggerContainer } from "@/lib/motion";
-import { useState } from "react";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -39,6 +39,8 @@ export default function Footer() {
       setEmail("");
     }
   };
+
+  const footerLinkEntries = Object.entries(footerLinks);
 
   return (
     <footer className="bg-slate-900 text-slate-300">
@@ -144,21 +146,32 @@ export default function Footer() {
           </motion.div>
 
           {/* Link Columns */}
-          {Object.entries(footerLinks).map(([category, links]) => (
+          {footerLinkEntries.map(([category, links], categoryIndex) => (
             <motion.div key={category} variants={fadeInUp}>
               <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
                 {category}
               </h4>
               <ul className="space-y-3">
-                {links.map((link) => (
+                {links.map((link, linkIndex) => (
                   <li key={link.label}>
-                    <Link
-                      href={getHref(link.href)}
-                      onClick={(e) => handleNavClick(e, link.href)}
-                      className="text-slate-400 hover:text-white text-sm transition-colors hover:translate-x-0.5 inline-block"
-                    >
-                      {link.label}
-                    </Link>
+                    {categoryIndex === 3 && linkIndex === 0 ? (
+                      <Link
+                        href={getHref(link.href)}
+                        onClick={(e) => handleNavClick(e, link.href)}
+                        className="text-slate-400 hover:text-white text-sm transition-colors hover:translate-x-0.5 inline-block"
+                        style={{ color: "#000000", backgroundColor: "#4f46e5" }}
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <Link
+                        href={getHref(link.href)}
+                        onClick={(e) => handleNavClick(e, link.href)}
+                        className="text-slate-400 hover:text-white text-sm transition-colors hover:translate-x-0.5 inline-block"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
